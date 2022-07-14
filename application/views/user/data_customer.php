@@ -23,7 +23,7 @@
             </form>
         </div>
 
-        <div class="col-lg-12">
+        <!-- <div class="col-lg-12">
             <?php if (validation_errors()) : ?>
                 <div class="alert alert-danger" role="alert">
                     <?= validation_errors(); ?>
@@ -38,7 +38,6 @@
                         <th scope="col">Alamat</th>
                         <th scope="col">Status</th>
                         <th scope="col">Tanggal<veh>
-                                <!-- <th scope="col">Action</th> -->
                     </tr>
                 </thead>
                 <tbody>
@@ -50,16 +49,12 @@
                             <td><?= $customer->Address; ?></td>
                             <td><?= $customer->Status; ?></td>
                             <td><?= $customer->Date; ?></td>
-                            <!-- <td>
-                            <a class="badge badge-success" href="">Edit</a>
-                            <a class="badge badge-danger" href="">Delete</a>
-                        </td> -->
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
             </table>
 
-        </div>
+        </div> -->
     </div>
 </div>
 <!-- /.container-fluid -->

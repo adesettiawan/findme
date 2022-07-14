@@ -163,7 +163,7 @@ class Admin extends CI_Controller
     // data customer
     public function data_customer()
     {
-        $data['title'] = 'Data Customer';
+        $data['title'] = 'Import Data Customer';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['dt_customer'] = $this->db->get('data_customer')->result();
 
@@ -175,34 +175,34 @@ class Admin extends CI_Controller
         $this->load->view('templates/footer');
     }
 
-    public function search_customer()
-    {
-        $data['title'] = 'Data Customer';
-        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-        // $data['dt_customer'] = $this->db->get('data_customer')->result();
+    // public function search_customer()
+    // {
+    //     $data['title'] = 'Pencarian Data Customer';
+    //     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+    //     // $data['dt_customer'] = $this->db->get('data_customer')->result();
 
-        //search keyword
-        $data['keyword'] = $this->input->get('keyword');
-        if (!empty($this->input->get('keyword'))) {
-            $data['search_result'] = $this->m_admin->search_keyword($data['keyword']);
-        } else {
-            $data['search_result'] = $this->db->get('data_customer')->result_array();
-        }
+    //     //search keyword
+    //     $data['keyword'] = $this->input->get('keyword');
+    //     if (!empty($this->input->get('keyword'))) {
+    //         $data['search_result'] = $this->m_admin->search_keyword($data['keyword']);
+    //     } else {
+    //         $data['search_result'] = $this->db->get('data_customer')->result_array();
+    //     }
 
-        if (count($data['search_result']) <= 0) {
-            $this->load->view('templates/header', $data);
-            $this->load->view('templates/sidebar', $data);
-            $this->load->view('templates/topbar', $data);
-            $this->load->view('admin/search_empty.php', $data);
-            $this->load->view('templates/footer');
-        } else {
-            $this->load->view('templates/header', $data);
-            $this->load->view('templates/sidebar', $data);
-            $this->load->view('templates/topbar', $data);
-            $this->load->view('admin/search_customer', $data);
-            $this->load->view('templates/footer');
-        }
-    }
+    //     if (count($data['search_result']) <= 0) {
+    //         $this->load->view('templates/header', $data);
+    //         $this->load->view('templates/sidebar', $data);
+    //         $this->load->view('templates/topbar', $data);
+    //         $this->load->view('admin/search_empty.php', $data);
+    //         $this->load->view('templates/footer');
+    //     } else {
+    //         $this->load->view('templates/header', $data);
+    //         $this->load->view('templates/sidebar', $data);
+    //         $this->load->view('templates/topbar', $data);
+    //         $this->load->view('admin/search_customer', $data);
+    //         $this->load->view('templates/footer');
+    //     }
+    // }
 
     public function data_customer_import()
     {

@@ -58,6 +58,9 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="newRoleModalLabel">Add New Role</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <form action="<?= base_url('admin/role'); ?>" method="post">
                 <div class="modal-body">

@@ -5,7 +5,7 @@
     <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
 
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-4">
             <?= form_error('menu', '<div class="alert alert-danger" role="alert">', '</div>'); ?>
             <?php
             $message = $this->session->flashdata('message');
@@ -20,8 +20,8 @@
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Menu</th>
-                        <th scope="col">Action</th>
+                        <th scope="col" style="text-align: right;">Menu</th>
+                        <!-- <th scope="col">Action</th> -->
                     </tr>
                 </thead>
                 <tbody>
@@ -29,11 +29,11 @@
                     <?php foreach ($menu as $m) : ?>
                         <tr>
                             <th scope="row"><?= $i; ?></th>
-                            <td><?= $m['menu']; ?></td>
-                            <td>
+                            <td style="text-align: right;"><?= $m['menu']; ?></td>
+                            <!-- <td>
                                 <a class="badge badge-success" href="<?= base_url('menu/editmenu/' . $m['id']); ?>">Edit</a>
                                 <a class="badge badge-danger" href="<?= base_url('menu/delete_menu/' . $m['id']); ?>">Delete</a>
-                            </td>
+                            </td> -->
                         </tr>
                         <?php $i++; ?>
                     <?php endforeach; ?>
@@ -57,7 +57,9 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="newMenuModalLabel">Add New Menu</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <form action="<?= base_url('menu'); ?>" method="post">
                 <div class="modal-body">

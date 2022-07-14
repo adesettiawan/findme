@@ -89,7 +89,7 @@ class User extends CI_Controller
     // data customer
     public function data_customer()
     {
-        $data['title'] = 'Data Customer';
+        $data['title'] = 'Pencarian Data Customer';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['dt_customer'] = $this->db->get('data_customer')->result();
 
@@ -103,7 +103,7 @@ class User extends CI_Controller
 
     public function search_customer()
     {
-        $data['title'] = 'Data Customer';
+        $data['title'] = 'Pencarian Data Customer';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         // $data['dt_customer'] = $this->db->get('data_customer')->result();
 

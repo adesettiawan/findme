@@ -32,11 +32,9 @@
         </div>
     </div>
 
-    <div class="row">
 
-    </div>
     <!-- table customer -->
-    <div class="row" style="margin-top: 30px;">
+    <!-- <div class="row" style="margin-top: 30px;">
         <div class="col-lg-12">
             <form method="get" action="<?= base_url('admin/search_customer'); ?>" enctype="multipart/form-data">
                 <div class="row">
@@ -69,7 +67,6 @@
                         <th scope="col">Alamat</th>
                         <th scope="col">Status</th>
                         <th scope="col">Tanggal<veh>
-                                <!-- <th scope="col">Action</th> -->
                     </tr>
                 </thead>
                 <tbody>
@@ -81,17 +78,13 @@
                             <td><?= $customer->Address; ?></td>
                             <td><?= $customer->Status; ?></td>
                             <td><?= $customer->Date; ?></td>
-                            <!-- <td>
-                            <a class="badge badge-success" href="">Edit</a>
-                            <a class="badge badge-danger" href="">Delete</a>
-                        </td> -->
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
             </table>
 
         </div>
-    </div>
+    </div> -->
 </div>
 <!-- /.container-fluid -->
 
