@@ -54,9 +54,7 @@
 </div>
 <!-- End of Main Content -->
 
-
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
         $('#inputGroupFile01').on('change', function(e) {
