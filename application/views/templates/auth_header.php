@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
+    <link rel="icon" href="<?= base_url('assets/img/profile/search.png'); ?>" type="image/gif" sizes="16x16">
     <title><?= $title; ?></title>
 
     <!-- Custom fonts for this template-->
