@@ -11,6 +11,20 @@
 
             <!-- Divider -->
             <hr class="sidebar-divider">
+            <?php
+            if ($this->session->userdata('role_id') != 1) {
+            ?>
+                <li class="nav-item <?php if ($this->uri->uri_string() == 'user/dashboard') {
+                                        echo 'active';
+                                    } ?>">
+                    <a class="nav-link" href="<?= base_url('user/dashboard'); ?>">
+                        <i class="fas fa-fw fa-tachometer-alt"></i>
+                        <span>Dashboard</span></a>
+                </li>
+
+                <!-- Divider -->
+                <hr class="sidebar-divider d-none d-md-block">
+            <?php } ?>
 
             <!-- QUERY MENU -->
             <?php
