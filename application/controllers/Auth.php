@@ -120,33 +120,20 @@ class Auth extends CI_Controller
 
     private function _sendEmail($token, $type)
     {
-        $this->load->library('email');
-        $config = array();
-        $config['protocol'] = 'smtp';
-        $config['smtp_host'] = 'ssl://smtp.googlemail.com';
-        $config['smtp_user'] = 'rheyatumanggor@gmail.com';
-        $config['smtp_pass'] = 'jorfaaxshnyvydpn';
-        $config['smtp_port'] = 465;
-        $config['mailtype'] = 'html';
-        $config['charset'] = 'utf-8';
-        $this->email->initialize($config);
 
-        $this->email->set_newline("\r\n");
-
-
-        // $config = [
-        //     'protocol'  => 'smtp',
-        //     'smtp_host' => 'ssl://smtp.googlemail.com',
-        //     'smtp_user' => 'rheyatumanggor@gmail.com',
-        //     'smtp_pass' => 'jorfaaxshnyvydpn',
-        //     'smtp_port' => 465,
-        //     'mailtype'  => 'html',
-        //     'charset'   => 'utf-8',
-        //     'newline'   => "\r\n"
-        // ];
+        $config = [
+            'protocol'  => 'smtp',
+            'smtp_host' => 'ssl://smtp.googlemail.com',
+            'smtp_user' => 'rheyatumanggor@gmail.com',
+            'smtp_pass' => 'jorfaaxshnyvydpn',
+            'smtp_port' => 465,
+            'mailtype'  => 'html',
+            'charset'   => 'utf-8',
+            'newline'   => "\r\n"
+        ];
 
         // $this->load->library('email', $config);
-        // $this->email->initialize($config);
+        $this->email->initialize($config);
 
         $this->email->from('rheyatumanggor@gmail.com', 'Rheya Tumanggor');
         $this->email->to($this->input->post('email'));
