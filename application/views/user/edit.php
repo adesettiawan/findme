@@ -6,6 +6,14 @@
 
     <div class="row">
         <div class="col-lg-8">
+            <?php
+            $message = $this->session->flashdata('message');
+            if (isset($message)) {
+                echo '<div class="alert alert-info">' . $message . '</div>';
+                $this->session->unset_userdata('message');
+            }
+
+            ?>
             <?= form_open_multipart('user/edit') ?>
             <div class="form-group row">
                 <label for="email" class="col-sm-2 col-form-label">Email</label>

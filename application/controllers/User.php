@@ -69,8 +69,13 @@ class User extends CI_Controller
 
                     $new_image = $this->upload->data('file_name');
                     $this->db->set('image', $new_image);
-                } else {
-                    echo $this->upload->display_errors;
+                    $this->session->set_flashdata('message', '
+                Your profile has been updated!');
+                } else if (!$this->upload->do_upload('image')) {
+                    echo $this->upload->display_errors();
+                    $this->session->set_flashdata('message', '
+                    Please check your input again, make sure the image type is gif | jpg | png | jpeg and the maximum file size is 2MB.');
+                    redirect('user/edit');
                 }
             }
 
@@ -79,8 +84,7 @@ class User extends CI_Controller
             $this->db->where('email', $email);
             $this->db->update('user');
 
-            $this->session->set_flashdata('message', '
-                Your profile has been updated!');
+
             redirect('user');
         }
     }
